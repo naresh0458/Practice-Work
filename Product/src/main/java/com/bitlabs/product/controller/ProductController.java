@@ -42,22 +42,22 @@ public class ProductController {
 		return psi.getProductByPname(pname);
 	}
 	
-	@GetMapping("/getProductBygreatthanPrice/{price}")
+	@GetMapping("/getProductGreatthanPrice/{price}")
 	public List<Product> getProductBygreatThan(@PathVariable ("price") double pprice){
 		return psi.getProductBygreatThan(pprice);
 	}
 	
-	@GetMapping("/getproductlikename/{pname}")
+	@GetMapping("/getProductLikeName/{pname}")
 	public List<Product> getProductLikePname(@PathVariable ("pname") String pname){
 		return psi.getProductLikePname(pname);
 	}
 	
-	@GetMapping("/getProductByMaxprice/{pname}")
+	@GetMapping("/getProductByMaxPrice/{pname}")
 	public double getProductByMaxprice(@PathVariable("pname") String pname) {
 		return psi.getProductByMaxprice(pname);
 	}
 	
-	@PutMapping("/updatequantity/{pid}/{newqty}")
+	@PutMapping("/updateQuantity/{pid}/{newqty}")
 	public boolean updateQty(  @PathVariable ("pid") long pid,@PathVariable("newqty") int nqty) {
 		return psi.updateqty(pid,nqty);
 	}	
