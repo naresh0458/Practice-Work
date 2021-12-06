@@ -22,7 +22,7 @@ public class ProductController {
 	private ProductServiceInterface psi;
 	
 	
-	@PostMapping("/addproduct")
+	@PostMapping("/addProduct")
 	public boolean saveProduct(@Valid @RequestBody Product prod) {
 		return psi.saveProduct(prod);
 	}
@@ -32,7 +32,7 @@ public class ProductController {
 		return psi.getProductByPrice(pprice);
 	}
 
-	@GetMapping("getproductbybetweenprice/{minprice}/{maxprice}")
+	@GetMapping("getProductBetweenPrice/{minprice}/{maxprice}")
 	public List<Product> getProductBetweenPrice(@PathVariable("minprice") double minprice,@PathVariable("maxprice") double maxprice){
 		return psi.getProductBetweenPrice(minprice,maxprice);
 	}
